@@ -8,7 +8,6 @@ def wordsToArray(words):
 
 def intoBinaryNumber(number):
     binary_number = ''
-
     if (number != 0):
         while (number >= 1):
             if (number % 2 == 0):
@@ -17,10 +16,8 @@ def intoBinaryNumber(number):
             else:
                 binary_number += '1'
                 number = (number - 1) / 2
-
     while (len(binary_number) < 8):
         binary_number += '0'
-
     return ''.join(reversed(binary_number))
 
 
@@ -76,7 +73,6 @@ def block_crypting(text, block_lenght):
             new.append(xor(text[i], ini_vektor[i]))
         else:
             new.append(xor(text[i], text[i - block_lenght]))
-            # stale je chyba tu, treba upravit text, nech neprichadza v poli abo co
     return new
 
 

@@ -70,16 +70,16 @@ def block_crypting(text, block_lenght):
     new = []
     for i in range(len(text)):
         if (i < block_lenght):
-            new.append(xor(text[i], ini_vektor[i]))
+            new.append(xor(text[i], i_vector[i]))
         else:
             new.append(xor(text[i], text[i - block_lenght]))
     return new
 
 
-## Cipher block chaning
 text = input()
 block_lenght = 8
-ini_vektor = [0, 1, 1, 0, 1, 0, 1, 0]
+i_vector = [0, 1, 1, 0, 1, 0, 1, 0]
+key = [0] * block_lenght
 
 text_in_binary = wordsToArray(arrayToBinary(asciiValue(text)))
 crypted = block_crypting(text_in_binary, block_lenght)
@@ -88,4 +88,3 @@ write(text)
 write(text_in_binary)
 write(crypted)
 write(intoOpenText(crypted))
-
